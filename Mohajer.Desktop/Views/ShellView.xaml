@@ -42,7 +42,7 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}" VerticalAlignment="Center" Margin="10,0" >
+                    <Button Name="AboutUs" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" VerticalAlignment="Center" Margin="10,0" >
                         <materialDesign:PackIcon Visibility="{Binding IsLoginEnabled}" Kind="InformationOutline"  Width="24" Height="24"/>
                     </Button>
 

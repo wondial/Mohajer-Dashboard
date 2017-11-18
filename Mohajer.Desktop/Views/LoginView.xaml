@@ -42,7 +42,7 @@
             <StackPanel>
 
                 <TextBox Name="UserName" materialDesign:HintAssist.Hint="نام کاربری" />
-                <PasswordBox 
+                <TextBox
                     HorizontalAlignment="Stretch" 
                     HorizontalContentAlignment="Center" 
                     Margin="5,10,5,30"
@@ -51,7 +51,7 @@
                     materialDesign:HintAssist.Hint="رمز عبور" />
 
                 <Border Visibility="Visible" BorderBrush="Black" BorderThickness="1"  Width="180" Height="60" Margin="0,15,0,0">
-                    <Image Name="CaptchaImageUrl" />
+                    <Image Name="CaptchaImage" />
                 </Border>
 
                 <TextBox Name="CaptchaValue" materialDesign:HintAssist.Hint="مقدار بالا را وارد کنید" />

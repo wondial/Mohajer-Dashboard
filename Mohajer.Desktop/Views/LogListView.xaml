@@ -13,6 +13,7 @@
     <UserControl.Resources>
         <converters:ReserveLogEnumConverter x:Key="EnumConverter" />
         <converters:GregorianToPersianDate x:Key="PersianDateConverter" />
+        <converters:MealCostConverter x:Key="CostConverter" />
     </UserControl.Resources>
 
         <ItemsControl ItemsSource="{Binding ReserveLogs}" Grid.IsSharedSizeScope="True">
@@ -73,7 +74,7 @@
 
                             <StackPanel Grid.Column="4" Margin="15,0" HorizontalAlignment="Left">
                                 <TextBlock Foreground="Gray">هزینه</TextBlock>
-                                <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Text="{Binding Food.MealCost}" />
+                                <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Text="{Binding Food.MealCost, Converter={StaticResource CostConverter}}" />
                             </StackPanel>
 
                             <StackPanel Margin="15,0" HorizontalAlignment="Left" Grid.Column="5">

@@ -13,6 +13,8 @@ namespace Mohajer.Core
         string FullName { get; set; }
         string StudentCode { get; set; }
 
+        bool FirstTime { get; set; }
+
         string Cookies { get; set; }
 
         float HighFood { get; set; }

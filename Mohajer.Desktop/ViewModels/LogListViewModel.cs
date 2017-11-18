@@ -22,54 +22,6 @@ namespace Mohajer.Desktop.ViewModels
             AddToList(logs);
         }
 
-        public LogListViewModel()
-        {
-            var FakeData = new List<ReserveLog>()
-            {
-                new ReserveLog()
-                {
-                    Food = new Food() {Title = "چلو خورشت قیمه بادمجان", MealCost = MealCost.High, Date = DateTime.Now},
-                    Operation = ReserveOperation.Reserve,
-                    Result = ReserveResult.Successful,
-                    TimeStamp = DateTime.Now.AddMinutes(-15)
-                },
-
-                                new ReserveLog()
-                {
-                    Food = new Food() {Title = "چلو خورشت قیمه بادمجان", MealCost = MealCost.High, Date = DateTime.Now},
-                    Operation = ReserveOperation.Reserve,
-                    Result = ReserveResult.NotEnoughMoney,
-                    TimeStamp = DateTime.Now.AddMinutes(-15)
-                },
-
-                                                new ReserveLog()
-                {
-                    Food = new Food() {Title = "چلو خورشت قیمه بادمجان", MealCost = MealCost.High, Date = DateTime.Now},
-                    Operation = ReserveOperation.Reserve,
-                    Result = ReserveResult.ConnectionProblem,
-                    TimeStamp = DateTime.Now.AddMinutes(-15)
-                },
-
-                new ReserveLog()
-                {
-                    Food = new Food() {Title = "چلو خورشت قیمه بادمجان", MealCost = MealCost.High, Date = DateTime.Now},
-                    Operation = ReserveOperation.Reserve,
-                    Result = ReserveResult.NotEnoughMoney,
-                    TimeStamp = DateTime.Now.AddMinutes(-15)
-                },
-
-                new ReserveLog()
-                {
-                    Food = new Food() {Title = "چلو خورشت قیمه بادمجان", MealCost = MealCost.High, Date = DateTime.Now},
-                    Operation = ReserveOperation.Reserve,
-                    Result = ReserveResult.NotEnoughMoney,
-                    TimeStamp = DateTime.Now.AddMinutes(-15)
-                },
-            };
-
-            AddToList(FakeData);
-        }
-
         private void AddToList(IEnumerable<ReserveLog> reserveLogs)
         {
             foreach (var log in reserveLogs)

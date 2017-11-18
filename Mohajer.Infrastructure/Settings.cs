@@ -38,6 +38,7 @@ namespace Mohajer.Infrastructure
         public float LowFood { get => _currentSettings.LowFood; set => _currentSettings.LowFood = value; }
 
         public string Cookies { get => _currentSettings.Cookies; set => _currentSettings.Cookies = value; }
+        public bool FirstTime { get => _currentSettings.FirstTime; set => _currentSettings.FirstTime = value; }
 
         public void Clear()
         {
@@ -80,6 +81,8 @@ namespace Mohajer.Infrastructure
             public float Balance { get; set; }
             public string FullName { get; set; }
             public string StudentCode { get; set; }
+
+            public bool FirstTime { get; set; } = true;
 
             public float HighFood { get; set; }
             public float MediumFood { get; set; }

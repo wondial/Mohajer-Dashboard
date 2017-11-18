@@ -5,7 +5,10 @@ using Mohajer.Core.Models;
 using Mohajer.Core.Repositories;
 using Mohajer.Desktop.Dialogs;
 using System;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace Mohajer.Desktop.ViewModels
@@ -71,6 +74,7 @@ namespace Mohajer.Desktop.ViewModels
                         _settings.FullName = newStudent.FullName;
                         _settings.StudentCode = newStudent.StudentCode;
                         _settings.Cookies = string.Join(";", result.Content2.Select(p => $"{p.Name}={p.Value}"));
+                        _settings.FirstTime = false;
 
                         _settings.Save();
 
@@ -79,6 +83,7 @@ namespace Mohajer.Desktop.ViewModels
                     }
             }
         }
+
         private async void RefreshCaptcha()
         {
             await DialogHost.Show(new BusyProgressView(), async (object s, DialogOpenedEventArgs e) =>
@@ -91,7 +96,32 @@ namespace Mohajer.Desktop.ViewModels
                 }
                 else
                 {
-                    CaptchaImageUrl = captchaResult.Content;
+                    BitmapImage bitmap = null;
+
+                    try
+                    {
+                        using (WebClient webClient = new WebClient())
+                        {
+                            var response = await webClient.DownloadDataTaskAsync(new Uri(captchaResult.Content));
+
+                            using (var stream = new MemoryStream(response))
+                            {
+                                bitmap = new BitmapImage();
+                                bitmap.BeginInit();
+                                bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                                bitmap.StreamSource = stream;
+                                bitmap.EndInit();
+                                bitmap.Freeze();
+
+                                CaptchaImage = bitmap;
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        Error = "خطا در اتصال";
+                    }
+
                 }
 
                 e.Session.Close();

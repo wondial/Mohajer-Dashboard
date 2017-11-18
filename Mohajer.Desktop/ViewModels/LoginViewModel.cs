@@ -1,5 +1,6 @@
 ﻿using Mohajer.Desktop.Validation;
 using System.Linq;
+using System.Windows.Media.Imaging;
 
 namespace Mohajer.Desktop.ViewModels
 {
@@ -75,12 +76,12 @@ namespace Mohajer.Desktop.ViewModels
             }
         }
 
-        private string _captchaImageUrl;
+        private BitmapImage _captchaImage;
 
-        public string CaptchaImageUrl
+        public BitmapImage CaptchaImage
         {
-            get => _captchaImageUrl;
-            set { Set(ref _captchaImageUrl, value); _captchaValue = string.Empty; NotifyOfPropertyChange(() => CaptchaValue); }
+            get => _captchaImage;
+            set { Set(ref _captchaImage, value); _captchaValue = string.Empty; NotifyOfPropertyChange(() => CaptchaValue); }
         }
 
 

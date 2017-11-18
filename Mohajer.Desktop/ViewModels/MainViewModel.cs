@@ -67,21 +67,22 @@ namespace Mohajer.Desktop.ViewModels
 
                         e.Session.Close();
                     });
+
+                    if (balance && price && food)
+                    {
+                        await _eventAggregator.PublishOnUIThreadAsync(new object());
+                        return;
+                    }
+                    else
+                    {
+                        await DialogHost.Show(new ConnectionErrorView());
+                    }
                 }
                 catch (Exception)
                 {
                     return;
                 }
 
-                if (balance && price && food)
-                {
-                    await _eventAggregator.PublishOnUIThreadAsync(new object());
-                    return;
-                }
-                else
-                {
-                    await DialogHost.Show(new ConnectionErrorView());
-                }
             } while (!(balance && price && food));
         }
 

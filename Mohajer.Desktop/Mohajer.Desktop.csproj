@@ -104,6 +104,9 @@
     <Compile Include="Converters\StatusConverter.cs" />
     <Compile Include="Converters\TestConverter.cs" />
     <Compile Include="Converters\VisibilityConverter.cs" />
+    <Compile Include="Dialogs\AboutUsView.xaml.cs">
+      <DependentUpon>AboutUsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\BusyProgressView.xaml.cs">
       <DependentUpon>BusyProgressView.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Dialogs\AboutUsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\BusyProgressView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

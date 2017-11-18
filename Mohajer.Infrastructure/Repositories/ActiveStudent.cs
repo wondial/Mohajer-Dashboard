@@ -13,9 +13,9 @@ namespace Mohajer.Infrastructure.Repositories
         private IStudentRepository _studentRepository;
         private IFoodRepository _foodRepository;
 
-        Lazy<ReserveLogRepository> _reserveLogRepository;
+        Lazy<IReserveLogRepository> _reserveLogRepository;
 
-        public ActiveStudent(ISettings settings, IStudentRepository studentRepository, IFoodRepository foodRepository, Lazy<ReserveLogRepository> reserveLogRepository)
+        public ActiveStudent(ISettings settings, IStudentRepository studentRepository, IFoodRepository foodRepository, Lazy<IReserveLogRepository> reserveLogRepository)
         {
             _reserveLogRepository = reserveLogRepository;
             _foodRepository = foodRepository;

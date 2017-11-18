@@ -53,6 +53,7 @@ namespace Mohajer.Desktop.ViewModels
 
         public void Handle(int message)
         {
+
             IsLogoutEnabled = true;
             ActivateItem(_mainViewModel.Value);
         }
@@ -73,6 +74,18 @@ namespace Mohajer.Desktop.ViewModels
         public void Home()
         {
             _eventAggregator.PublishOnUIThread(NavigationEnum.Home);
+        }
+
+        public void AboutUs()
+        {
+            try
+            {
+                DialogHost.Show(new AboutUsView());
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using Mohajer.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,15 @@ namespace Mohajer.Desktop.ViewModels
         private IWindowManager _windowManager;
         private ShellViewModel _shellViewModel;
 
-        public SystemTrayViewModel(IWindowManager windowManager, ShellViewModel shellViewModel)
+        public SystemTrayViewModel(IWindowManager windowManager, ShellViewModel shellViewModel, ISettings settings)
         {
             _windowManager = windowManager;
             _shellViewModel = shellViewModel;
+
+            if (settings.FirstTime)
+            {
+                ShowWindow();
+            }
         }
 
         public void ShowWindow()
