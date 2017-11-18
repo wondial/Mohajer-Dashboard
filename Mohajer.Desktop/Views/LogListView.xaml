@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="Mohajer.Desktop.Views.LogListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Mohajer.Desktop.ViewModels"
+             xmlns:converters="clr-namespace:Mohajer.Desktop.Converters"
+             xmlns:models="clr-namespace:Mohajer.Core.Models;assembly=Mohajer.Core"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DataContext="{d:DesignInstance Type=local:LogListViewModel, IsDesignTimeCreatable=True}"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <converters:ReserveLogEnumConverter x:Key="EnumConverter" />
+        <converters:GregorianToPersianDate x:Key="PersianDateConverter" />
+    </UserControl.Resources>
+
+        <ItemsControl ItemsSource="{Binding ReserveLogs}" Grid.IsSharedSizeScope="True">
+            
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type models:ReserveLog}">
+                    <Border Padding="15" BorderThickness="0,1,0,0" BorderBrush="Black" Margin="5,0,5,0">
+                        <Grid FlowDirection="RightToLeft">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="A" />
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="B" />
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="C" />
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="D" />
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="E" />
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="F" />
+                            </Grid.ColumnDefinitions>
+
+                            <materialDesign:Chip
+                                Name="Chip"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Stretch"
+                                
+	                            Margin="0,0,4,4">
+
+                                
+                                
+                                <materialDesign:Chip.Icon>
+                                    
+                                    <materialDesign:PackIcon Name="ChipIcon" Height="24" Width="24"/>
+                                </materialDesign:Chip.Icon>
+                                
+                                <materialDesign:Chip.Content>
+                                    <TextBlock FontWeight="SemiBold" HorizontalAlignment="Center" Text="{Binding Result, Converter={StaticResource EnumConverter}}" />
+                                </materialDesign:Chip.Content>
+                            </materialDesign:Chip>
+
+                            <StackPanel Margin="15,0" HorizontalAlignment="Left" Grid.Column="1">
+                                <TextBlock Foreground="Gray">نوع عملیات</TextBlock>
+                                <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Text="{Binding Operation, Converter={StaticResource EnumConverter}}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2" Margin="15,0" HorizontalAlignment="Left">
+                                <TextBlock Foreground="Gray">غذای روز</TextBlock>
+                                <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Text="{Binding Food.Date, Converter={StaticResource PersianDateConverter}}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="3" Margin="15,0" HorizontalAlignment="Left">
+                                <TextBlock Foreground="Gray">نام غذا</TextBlock>
+                                <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Text="{Binding Food.Title}" />
+                            </StackPanel>
+                            
+
+                            <StackPanel Grid.Column="3" Margin="15,0" HorizontalAlignment="Left">
+                                <TextBlock Foreground="Gray">نام غذا</TextBlock>
+                                <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Text="{Binding Food.Title}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="4" Margin="15,0" HorizontalAlignment="Left">
+                                <TextBlock Foreground="Gray">هزینه</TextBlock>
+                                <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Text="{Binding Food.MealCost}" />
+                            </StackPanel>
+
+                            <StackPanel Margin="15,0" HorizontalAlignment="Left" Grid.Column="5">
+                                <TextBlock Foreground="Gray">ساعت و زمان انجام عملیات</TextBlock>
+                                <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Text="{Binding TimeStamp, Converter={StaticResource PersianDateConverter}, ConverterParameter=time}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Result}" Value="Successful">
+                            <Setter TargetName="ChipIcon" Property="Kind" Value="CheckCircleOutline" />
+                            <Setter TargetName="Chip" Property="Foreground" Value="Green"/>
+                            <Setter TargetName="Chip" Property="IconBackground" Value="Green"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding Result}" Value="ConnectionProblem">
+                            <Setter TargetName="ChipIcon" Property="Kind" Value="CloseCircleOutline" />
+                            <Setter TargetName="Chip" Property="Foreground" Value="OrangeRed"/>
+                            <Setter TargetName="Chip" Property="IconBackground" Value="OrangeRed"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding Result}" Value="NotEnoughMoney">
+                            <Setter TargetName="ChipIcon" Property="Kind" Value="Coin" />
+                            <Setter TargetName="Chip" Property="Foreground" Value="Goldenrod"/>
+                            <Setter TargetName="Chip" Property="IconBackground" Value="Goldenrod"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                    
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+</UserControl>
