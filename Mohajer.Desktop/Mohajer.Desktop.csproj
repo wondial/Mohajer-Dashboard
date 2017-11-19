@@ -113,6 +113,9 @@
     <Compile Include="Dialogs\ConnectionErrorView.xaml.cs">
       <DependentUpon>ConnectionErrorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\NowImplementedYetView.xaml.cs">
+      <DependentUpon>NowImplementedYetView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="JobRegistry.cs" />
     <Compile Include="MohajerBootstrapper.cs" />
     <Compile Include="NavigationEnum.cs" />
@@ -172,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dialogs\ConnectionErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\NowImplementedYetView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

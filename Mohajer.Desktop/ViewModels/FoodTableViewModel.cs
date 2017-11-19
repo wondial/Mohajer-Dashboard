@@ -191,5 +191,10 @@ namespace Mohajer.Desktop.ViewModels
             return result;
         }
 
+        public void RefreshInfo()
+        {
+            _eventAggregator.PublishOnUIThread(NavigationEnum.Refresh);
+        }
+
     }
 }

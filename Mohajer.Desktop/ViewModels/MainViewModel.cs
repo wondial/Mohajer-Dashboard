@@ -142,16 +142,29 @@ namespace Mohajer.Desktop.ViewModels
 
         public void Handle(NavigationEnum message)
         {
-            if (message == NavigationEnum.Home)
+            switch (message)
             {
-                RightScreen = _foodTableViewModel;
-            }
-            else if (message == NavigationEnum.LogList)
-            {
-                var value = _logListViewModel.Value;
+                case NavigationEnum.Home:
+                    {
+                        RightScreen = _foodTableViewModel;
+                        break;
+                    }
 
-                ActivateItem(value);
-                RightScreen = value;
+                case NavigationEnum.LogList:
+                    {
+                        var value = _logListViewModel.Value;
+
+                        ActivateItem(value);
+                        RightScreen = value;
+                        break;
+                    }
+
+                case NavigationEnum.Refresh:
+                    Preparation();
+                    break;
+
+                default:
+                    break;
             }
         }
     }

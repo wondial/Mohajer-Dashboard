@@ -10,6 +10,7 @@ namespace Mohajer.Desktop
     {
         Home,
         LogList,
-        FoodTable
+        FoodTable,
+        Refresh
     }
 }

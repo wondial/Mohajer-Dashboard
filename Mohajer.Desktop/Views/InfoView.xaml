@@ -17,6 +17,7 @@
                 <Image Source="pack://application:,,,/Images/ProfilePicture.png" Stretch="UniformToFill" />
 
             <Button
+                Name="AddPicture"
                 BorderThickness="0"
                 BorderBrush="Transparent"
                     HorizontalAlignment="Right" 
@@ -62,6 +63,7 @@
 					Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                     FlowDirection="RightToLeft"
                     IsReadOnly="True" />
+
 
 
             </StackPanel>

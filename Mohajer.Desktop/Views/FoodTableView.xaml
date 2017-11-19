@@ -195,9 +195,18 @@
             Width="200"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Style="{StaticResource MaterialDesignRaisedLightButton}"
-            ToolTip="Resource name: MaterialDesignRaisedLightButton">
+            Style="{StaticResource MaterialDesignRaisedLightButton}">
             ذخیره تغییرات
         </Button>
+
+        <Button 
+            Grid.Row="2" 
+            Width="200" 
+            Name="RefreshInfo" 
+            VerticalAlignment="Center"
+            Margin="10" 
+            HorizontalAlignment="Right"
+            Style="{StaticResource MaterialDesignRaisedLightButton}" Content="تازه سازی"/>
+
     </Grid>
 </UserControl>
