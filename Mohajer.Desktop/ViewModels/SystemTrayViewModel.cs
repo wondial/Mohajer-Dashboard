@@ -19,6 +19,11 @@ namespace Mohajer.Desktop.ViewModels
             _windowManager = windowManager;
             _shellViewModel = shellViewModel;
 
+            if (settings.UserName != 0)
+            {
+                FluentScheduler.JobManager.Initialize(new JobRegistry());
+            }
+
             if (settings.FirstTime)
             {
                 ShowWindow();

@@ -34,7 +34,9 @@ namespace Mohajer.Desktop
 
             DisplayRootViewFor<SystemTrayViewModel>();
 
-            JobManager.Initialize(new JobRegistry());
+
+
+            
         }
 
         protected override void Configure()

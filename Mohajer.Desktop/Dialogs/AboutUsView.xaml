@@ -25,6 +25,7 @@
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -42,8 +43,19 @@
                 <materialDesign:PackIcon Grid.Row="2" Kind="Email" Height="20" Width="20" Margin="16,0,0,0" />
                 <TextBlock Margin="0,0,16,20" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Text="M.ShafieZadeh@Outlook.com" Style="{StaticResource MaterialDesignBody2TextBlock}" />
 
-                <materialDesign:PackIcon Grid.Row="3" Kind="Telegram" Height="20" Width="20" Margin="16,0,0,0" />
-                <TextBlock Margin="0,0,16,20" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Text="@M.Shfzd" Style="{StaticResource MaterialDesignBody2TextBlock}" />
+                <materialDesign:PackIcon Grid.Row="3" Kind="GithubCircle" Height="20" Width="20" Margin="16,0,0,0" />
+                <TextBlock Margin="0,0,16,20" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignBody2TextBlock}" >
+                     <Hyperlink NavigateUri="https://goo.gl/i9DGQj">
+                         https://goo.gl/GuoMCQ
+                     </Hyperlink>
+                </TextBlock>
+
+                <materialDesign:PackIcon Grid.Row="4" Kind="Telegram" Height="20" Width="20" Margin="16,0,0,0" />
+                <TextBlock Margin="0,0,16,20" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignBody2TextBlock}" >
+                     <Hyperlink NavigateUri="https://goo.gl/i9DGQj">
+                         https://goo.gl/i9DGQj
+                     </Hyperlink>
+                </TextBlock>
 
             </Grid>
         </materialDesign:Card>
