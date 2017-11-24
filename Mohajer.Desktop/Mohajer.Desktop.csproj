@@ -7,7 +7,7 @@
     <ProjectGuid>{CE20C4DB-6506-407B-AC57-CF6642891E54}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Mohajer.Desktop</RootNamespace>
-    <AssemblyName>Mohajer.Desktop</AssemblyName>
+    <AssemblyName>Mohajer</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
