@@ -16,7 +16,6 @@
 <ul>
   <li> قبل از نصب مطمئن شوید Net Framework 4.7 روی کامپیوتر شما نصب شده باشد. دانلود از <a href='https://www.microsoft.com/en-us/download/details.aspx?id=55167'>اینجا</a></li>
   <li> برای دانلود جدید ترین نسخه به <a href='https://github.com/Arishk/Mohajer-Dashboard/releases/latest'>این جا</a> مراجعه کنید  </li>
-  <li> برای مطلع شدن از نسخه جدید میتوانید در <a href='https://t.me/joinchat/AAAAAEcNXoVfTNgSipLlvg'>این کانال</a> عضو شوید  </li>
 </ul>
 
 <br/>
@@ -85,7 +84,7 @@
 
 <h3>باگ و مشکلات نرم افزار</h4>
 <hr />
-<span>فعلا مشکل خاصی پیدا نشده است ولی در صورتی که باگ یا مشکل خاصی پیدا کردید در تلگرام به من اطلاع دهید
+<span>فعلا مشکل خاصی پیدا نشده است
 </span>
 
 
